@@ -1,9 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<Windows.h> //to use Sleep()
 #include<time.h>
 
 void print_star(int); //별 출력
+void clear_screen(void);
+void wait_ms(int);
 int show_menu();
 void print_tutorial();
 void start_game();
@@ -17,9 +18,10 @@ void calc_score(int, int, int*, int*);
 int print_score(int, int);
 void print_win(int);
 
-int main() {
+int main(void) {
 	int scan; //초기메뉴선택
 	int retry; //돌아오기여부
+	srand((unsigned)time(NULL));
 	do {
 		scan = show_menu();
 		switch (scan) {
@@ -37,7 +39,7 @@ int main() {
 			break;
 		default:
 			printf("올바른 메뉴를 선택하세요...\n");
-			Sleep(1000);
+			wait_ms(1000);
 			retry = 1;
 			break;
 		}
@@ -52,10 +54,25 @@ void print_star(int n) { //별을 출력하는함수
 		printf("*");
 }
 
+void clear_screen(void) {
+#ifdef _WIN32
+	system("cls");
+#else
+	system("clear");
+#endif
+}
+
+void wait_ms(int milliseconds) {
+	clock_t start = clock();
+	clock_t delay = (clock_t)milliseconds * CLOCKS_PER_SEC / 1000;
+	while ((clock() - start) < delay)
+		;
+}
+
 int show_menu() {
 	int input;
 
-	system("cls");
+	clear_screen();
 	printf("******** E - card ********\n\n");
 	printf("	1. 게임 설명	\n\n");
 	printf("	2. 게임 시작	\n\n");
@@ -68,7 +85,7 @@ int show_menu() {
 
 void print_tutorial() {
 
-	system("cls");
+	clear_screen();
 	print_star(12);
 	printf(" E - Card 게임 설명 ");
 	print_star(42);
@@ -89,7 +106,7 @@ void print_tutorial() {
 }
 
 void start_game() {
-	int time = 1, com = 0, usr = 0; //횟수와점수초기화
+	int round_no = 1, com = 0, usr = 0; //횟수와점수초기화
 
 	int pai; //user가 황제인가 노예인가 패(pai) 선택
 	int citi; //유저의 시민패개수
@@ -102,28 +119,28 @@ void start_game() {
 
 	do {
 		do {
-			system("cls");
-			printf("[게임횟수: %d, 나: %d점, 컴퓨터: %d점]\n\n", time, usr, com);
+			clear_screen();
+			printf("[게임횟수: %d, 나: %d점, 컴퓨터: %d점]\n\n", round_no, usr, com);
 			pai = init_pai();
 			if (pai == 0 || pai == 1) //올바른선택
 				retry = 0;
 			else {
 				printf("올바른 메뉴를 선택하세요...");
-				Sleep(1000);
+				wait_ms(1000);
 				retry = 1;
 			}
 		} while (retry);
 		citi = 4, es = 1; //카드갯수초기화
 		do {
 			do {
-				system("cls");
-				printf("[게임횟수: %d, 나: %d점, 컴퓨터: %d점]\n\n", time, usr, com);
+				clear_screen();
+				printf("[게임횟수: %d, 나: %d점, 컴퓨터: %d점]\n\n", round_no, usr, com);
 				uc = get_user_card(pai, citi, es);
 				if ((uc == 0 || uc == 1) && !(citi < 1 && uc == 1)) //0이나 1을 선택, 시민카드가 1보다작으면 시민(1)불가
 					retry = 0;
 				else {
 					printf("올바른 메뉴를 선택하세요...");
-					Sleep(1000);
+					wait_ms(1000);
 					retry = 1;
 				}
 			} while (retry);
@@ -147,7 +164,7 @@ void start_game() {
 		} while (shobu == 2); //무승부아닐때까지반복
 		calc_score(pai, shobu, &usr, &com); //점수계산하여 포인터로반환
 		result = print_score(usr, com); //점수를 출력하고 결과반환(0:계속 1:win 2:lose 3:draw(exceptional case))
-		time++; //게임횟수증가
+		round_no++; //게임횟수증가
 		if (result == 1 || result == 2) { //게임최종승리결정
 			print_win(result);
 			cont = 0; //게임중단
@@ -302,7 +319,6 @@ int get_user_card(int pai, int citi, int es) { //패 선택받기
 }
 
 int get_computer_card(int a) {
-	srand(time(NULL));
 	if (a < 1)
 		return 0; //시민카드1장미만 시민카드불가
 	else

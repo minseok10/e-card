@@ -1,0 +1,15 @@
+# Build output
+assn2
+*.o
+*.exe
+
+# Backup files
+*.bak
+*~
+
+# macOS
+.DS_Store
+
+# Editor temporary files
+*.swp
+*.swo
