@@ -3,7 +3,7 @@
 #include<Windows.h> //to use Sleep()
 #include<time.h>
 
-void print_star(int); //º° Ãâ·Â
+void print_star(int); //ë³„ ì¶œë ¥
 int show_menu();
 void print_tutorial();
 void start_game();
@@ -18,8 +18,8 @@ int print_score(int, int);
 void print_win(int);
 
 int main() {
-	int scan; //ÃÊ±â¸Ş´º¼±ÅÃ
-	int retry; //µ¹¾Æ¿À±â¿©ºÎ
+	int scan; //ì´ˆê¸°ë©”ë‰´ì„ íƒ
+	int retry; //ëŒì•„ì˜¤ê¸°ì—¬ë¶€
 	do {
 		scan = show_menu();
 		switch (scan) {
@@ -32,11 +32,11 @@ int main() {
 			retry = 1;
 			break;
 		case 3:
-			printf("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù...\n");
+			printf("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤...\n");
 			retry = 0;
 			break;
 		default:
-			printf("¿Ã¹Ù¸¥ ¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä...\n");
+			printf("ì˜¬ë°”ë¥¸ ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš”...\n");
 			Sleep(1000);
 			retry = 1;
 			break;
@@ -46,7 +46,7 @@ int main() {
 	return 0;
 }
 
-void print_star(int n) { //º°À» Ãâ·ÂÇÏ´ÂÇÔ¼ö
+void print_star(int n) { //ë³„ì„ ì¶œë ¥í•˜ëŠ”í•¨ìˆ˜
 	int i;
 	for (i = 0; i < n; i++)
 		printf("*");
@@ -57,11 +57,11 @@ int show_menu() {
 
 	system("cls");
 	printf("******** E - card ********\n\n");
-	printf("	1. °ÔÀÓ ¼³¸í	\n\n");
-	printf("	2. °ÔÀÓ ½ÃÀÛ	\n\n");
-	printf("	3. °ÔÀÓ Á¾·á	\n\n");
+	printf("	1. ê²Œì„ ì„¤ëª…	\n\n");
+	printf("	2. ê²Œì„ ì‹œì‘	\n\n");
+	printf("	3. ê²Œì„ ì¢…ë£Œ	\n\n");
 	print_star(26);
-	printf("\nÀÔ·Â: ");
+	printf("\nì…ë ¥: ");
 	scanf("%d", &input);
 	return input;
 }
@@ -70,59 +70,59 @@ void print_tutorial() {
 
 	system("cls");
 	print_star(12);
-	printf(" E - Card °ÔÀÓ ¼³¸í ");
+	printf(" E - Card ê²Œì„ ì„¤ëª… ");
 	print_star(42);
-	printf("\n\nº» °ÔÀÓÀº µµ¹Ú¹¬½Ã·Ï Ä«ÀÌÁöÀÇ E - Card °ÔÀÓÀ» ±â¹İÀ¸·Î ÇÑ´Ù.\n\n");
-	printf("1. µÎ ÇÃ·¹ÀÌ¾î´Â È²Á¦ÆĞ¿Í ³ë¿¹ÆĞ Áß ÇÏ³ªÀÇ ÆĞ¸¦ °¢°¢ ¼±ÅÃÇÑ´Ù.\n");
-	printf("   È²Á¦ÆĞ = È²Á¦ Ä«µå 1Àå + ½Ã¹Î Ä«µå 4Àå\n");
-	printf("   ³ë¿¹ÆĞ = ³ë¿¹ Ä«µå 1Àå + ½Ã¹Î Ä«µå 4Àå\n\n");
-	printf("2. µÎ »ç¿ëÀÚ´Â ¸Å ÅÏ¸¶´Ù ÇÑ ÀåÀÇ Ä«µå¸¦ ¾Èº¸ÀÌ°Ô ³»¹Ğ°í, ÇÔ²² µÚÁı´Â´Ù.\n\n");
-	printf("3. ¾Æ·¡ÀÇ Ä«µå °£ »ó¼º °ü°è¿¡ µû¶ó ½ÂÆĞ¸¦ °áÁ¤ÇÑ´Ù.\n");
-	printf("   ´Ü, µÎ ÇÃ·¹ÀÌ¾î°¡ ½Ã¹Î Ä«µå¸¦ ³Â´Ù¸é, ¹«½ÂºÎ·Î Ã³¸®ÇÑ´Ù.\n\n");
-	printf("4. ³»¹Ğ¾ú´ø Ä«µå´Â ¼Ò¸ğµÇ°í ½ÂÆĞ°¡ °áÁ¤µÉ ¶§±îÁö 2·Î µ¹¾Æ°¡ ¹İº¹ÇÑ´Ù.\n\n");
-	printf(" »ó¼º°ü°è : È²Á¦ > ½Ã¹Î > ³ë¿¹ > È²Á¦\n\n");
+	printf("\n\në³¸ ê²Œì„ì€ ë„ë°•ë¬µì‹œë¡ ì¹´ì´ì§€ì˜ E - Card ê²Œì„ì„ ê¸°ë°˜ìœ¼ë¡œ í•œë‹¤.\n\n");
+	printf("1. ë‘ í”Œë ˆì´ì–´ëŠ” í™©ì œíŒ¨ì™€ ë…¸ì˜ˆíŒ¨ ì¤‘ í•˜ë‚˜ì˜ íŒ¨ë¥¼ ê°ê° ì„ íƒí•œë‹¤.\n");
+	printf("   í™©ì œíŒ¨ = í™©ì œ ì¹´ë“œ 1ì¥ + ì‹œë¯¼ ì¹´ë“œ 4ì¥\n");
+	printf("   ë…¸ì˜ˆíŒ¨ = ë…¸ì˜ˆ ì¹´ë“œ 1ì¥ + ì‹œë¯¼ ì¹´ë“œ 4ì¥\n\n");
+	printf("2. ë‘ ì‚¬ìš©ìëŠ” ë§¤ í„´ë§ˆë‹¤ í•œ ì¥ì˜ ì¹´ë“œë¥¼ ì•ˆë³´ì´ê²Œ ë‚´ë°€ê³ , í•¨ê»˜ ë’¤ì§‘ëŠ”ë‹¤.\n\n");
+	printf("3. ì•„ë˜ì˜ ì¹´ë“œ ê°„ ìƒì„± ê´€ê³„ì— ë”°ë¼ ìŠ¹íŒ¨ë¥¼ ê²°ì •í•œë‹¤.\n");
+	printf("   ë‹¨, ë‘ í”Œë ˆì´ì–´ê°€ ì‹œë¯¼ ì¹´ë“œë¥¼ ëƒˆë‹¤ë©´, ë¬´ìŠ¹ë¶€ë¡œ ì²˜ë¦¬í•œë‹¤.\n\n");
+	printf("4. ë‚´ë°€ì—ˆë˜ ì¹´ë“œëŠ” ì†Œëª¨ë˜ê³  ìŠ¹íŒ¨ê°€ ê²°ì •ë  ë•Œê¹Œì§€ 2ë¡œ ëŒì•„ê°€ ë°˜ë³µí•œë‹¤.\n\n");
+	printf(" ìƒì„±ê´€ê³„ : í™©ì œ > ì‹œë¯¼ > ë…¸ì˜ˆ > í™©ì œ\n\n");
 	print_star(74);
-	printf("\n¸Ş´º·Î µ¹¾Æ°¡·Á¸é EnterÅ°¸¦ ÀÔ·ÂÇÏ¼¼¿ä...");
-	while (getchar() != '\n'); //Å°º¸µå¹öÆÛ Á¤¸®
+	printf("\në©”ë‰´ë¡œ ëŒì•„ê°€ë ¤ë©´ Enterí‚¤ë¥¼ ì…ë ¥í•˜ì„¸ìš”...");
+	while (getchar() != '\n'); //í‚¤ë³´ë“œë²„í¼ ì •ë¦¬
 	getchar();
 	return;
 }
 
 void start_game() {
-	int time = 1, com = 0, usr = 0; //È½¼ö¿ÍÁ¡¼öÃÊ±âÈ­
+	int time = 1, com = 0, usr = 0; //íšŸìˆ˜ì™€ì ìˆ˜ì´ˆê¸°í™”
 
-	int pai; //user°¡ È²Á¦ÀÎ°¡ ³ë¿¹ÀÎ°¡ ÆĞ(pai) ¼±ÅÃ
-	int citi; //À¯ÀúÀÇ ½Ã¹ÎÆĞ°³¼ö
-	int es; //À¯ÀúÈ²Á¦¶Ç´Â³ë¿¹ ÆĞ °³¼ö(ÇÊ¿ä¾øÀ¸³ª È®Àå¼ºÀ»À§ÇÏ¿© »ç¿ë)
-	int shobu; //ÇÑ ÅÏ´ç ½ÂºÎ
-	int uc, cc; //Ä«µå¼±ÅÃÁö usercard,comcardÀÇÁÙÀÓ¸»
-	char cont; //´Ù½ÃÁøÇà¿©ºÎÆÇ´Ü, ±×¸®°í y,nÀ» Àá½Ã ÀúÀå
-	int result; // ¸¶Áö¸·°á°ú»óÈ²(ÃÖÁ¾½Â¸®ÆĞ¹è ¶Ç´Â ´ÙÀ½°ÔÀÓÁøÇà)
-	int retry; //ÀÔ·Â°ËÁõ¿ë ÀÓ½Ãº¯¼ö
+	int pai; //userê°€ í™©ì œì¸ê°€ ë…¸ì˜ˆì¸ê°€ íŒ¨(pai) ì„ íƒ
+	int citi; //ìœ ì €ì˜ ì‹œë¯¼íŒ¨ê°œìˆ˜
+	int es; //ìœ ì €í™©ì œë˜ëŠ”ë…¸ì˜ˆ íŒ¨ ê°œìˆ˜(í•„ìš”ì—†ìœ¼ë‚˜ í™•ì¥ì„±ì„ìœ„í•˜ì—¬ ì‚¬ìš©)
+	int shobu; //í•œ í„´ë‹¹ ìŠ¹ë¶€
+	int uc, cc; //ì¹´ë“œì„ íƒì§€ usercard,comcardì˜ì¤„ì„ë§
+	char cont; //ë‹¤ì‹œì§„í–‰ì—¬ë¶€íŒë‹¨, ê·¸ë¦¬ê³  y,nì„ ì ì‹œ ì €ì¥
+	int result; // ë§ˆì§€ë§‰ê²°ê³¼ìƒí™©(ìµœì¢…ìŠ¹ë¦¬íŒ¨ë°° ë˜ëŠ” ë‹¤ìŒê²Œì„ì§„í–‰)
+	int retry; //ì…ë ¥ê²€ì¦ìš© ì„ì‹œë³€ìˆ˜
 
 	do {
 		do {
 			system("cls");
-			printf("[°ÔÀÓÈ½¼ö: %d, ³ª: %dÁ¡, ÄÄÇ»ÅÍ: %dÁ¡]\n\n", time, usr, com);
+			printf("[ê²Œì„íšŸìˆ˜: %d, ë‚˜: %dì , ì»´í“¨í„°: %dì ]\n\n", time, usr, com);
 			pai = init_pai();
-			if (pai == 0 || pai == 1) //¿Ã¹Ù¸¥¼±ÅÃ
+			if (pai == 0 || pai == 1) //ì˜¬ë°”ë¥¸ì„ íƒ
 				retry = 0;
 			else {
-				printf("¿Ã¹Ù¸¥ ¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä...");
+				printf("ì˜¬ë°”ë¥¸ ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš”...");
 				Sleep(1000);
 				retry = 1;
 			}
 		} while (retry);
-		citi = 4, es = 1; //Ä«µå°¹¼öÃÊ±âÈ­
+		citi = 4, es = 1; //ì¹´ë“œê°¯ìˆ˜ì´ˆê¸°í™”
 		do {
 			do {
 				system("cls");
-				printf("[°ÔÀÓÈ½¼ö: %d, ³ª: %dÁ¡, ÄÄÇ»ÅÍ: %dÁ¡]\n\n", time, usr, com);
+				printf("[ê²Œì„íšŸìˆ˜: %d, ë‚˜: %dì , ì»´í“¨í„°: %dì ]\n\n", time, usr, com);
 				uc = get_user_card(pai, citi, es);
-				if ((uc == 0 || uc == 1) && !(citi < 1 && uc == 1)) //0ÀÌ³ª 1À» ¼±ÅÃ, ½Ã¹ÎÄ«µå°¡ 1º¸´ÙÀÛÀ¸¸é ½Ã¹Î(1)ºÒ°¡
+				if ((uc == 0 || uc == 1) && !(citi < 1 && uc == 1)) //0ì´ë‚˜ 1ì„ ì„ íƒ, ì‹œë¯¼ì¹´ë“œê°€ 1ë³´ë‹¤ì‘ìœ¼ë©´ ì‹œë¯¼(1)ë¶ˆê°€
 					retry = 0;
 				else {
-					printf("¿Ã¹Ù¸¥ ¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä...");
+					printf("ì˜¬ë°”ë¥¸ ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš”...");
 					Sleep(1000);
 					retry = 1;
 				}
@@ -130,75 +130,75 @@ void start_game() {
 
 			cc = get_computer_card(citi);
 
-			if (uc == 0) //Ä«µåÂ÷°¨(È®Àå¼º´ëºñ)
+			if (uc == 0) //ì¹´ë“œì°¨ê°(í™•ì¥ì„±ëŒ€ë¹„)
 				es--;
-			if (uc == 1) //Ä«µåÂ÷°¨
+			if (uc == 1) //ì¹´ë“œì°¨ê°
 				citi--;
 
 			shobu = compare_card(uc, cc, pai); // 0:win 1:lose 2:draw
-			print_result(pai, uc, cc, shobu); //ÆĞ¼±ÅÃ°á°ú
+			print_result(pai, uc, cc, shobu); //íŒ¨ì„ íƒê²°ê³¼
 
-			if (shobu == 2) { //¹«½ÂºÎ
-				printf("\n\n´ÙÀ½ ÅÏ (EnterÅ°¸¦ ÀÔ·ÂÇÏ¼¼¿ä...)");
+			if (shobu == 2) { //ë¬´ìŠ¹ë¶€
+				printf("\n\në‹¤ìŒ í„´ (Enterí‚¤ë¥¼ ì…ë ¥í•˜ì„¸ìš”...)");
 				while (getchar() != '\n');
 				getchar();
 			}
 
-		} while (shobu == 2); //¹«½ÂºÎ¾Æ´Ò¶§±îÁö¹İº¹
-		calc_score(pai, shobu, &usr, &com); //Á¡¼ö°è»êÇÏ¿© Æ÷ÀÎÅÍ·Î¹İÈ¯
-		result = print_score(usr, com); //Á¡¼ö¸¦ Ãâ·ÂÇÏ°í °á°ú¹İÈ¯(0:°è¼Ó 1:win 2:lose 3:draw(exceptional case))
-		time++; //°ÔÀÓÈ½¼öÁõ°¡
-		if (result == 1 || result == 2) { //°ÔÀÓÃÖÁ¾½Â¸®°áÁ¤
+		} while (shobu == 2); //ë¬´ìŠ¹ë¶€ì•„ë‹ë•Œê¹Œì§€ë°˜ë³µ
+		calc_score(pai, shobu, &usr, &com); //ì ìˆ˜ê³„ì‚°í•˜ì—¬ í¬ì¸í„°ë¡œë°˜í™˜
+		result = print_score(usr, com); //ì ìˆ˜ë¥¼ ì¶œë ¥í•˜ê³  ê²°ê³¼ë°˜í™˜(0:ê³„ì† 1:win 2:lose 3:draw(exceptional case))
+		time++; //ê²Œì„íšŸìˆ˜ì¦ê°€
+		if (result == 1 || result == 2) { //ê²Œì„ìµœì¢…ìŠ¹ë¦¬ê²°ì •
 			print_win(result);
-			cont = 0; //°ÔÀÓÁß´Ü
+			cont = 0; //ê²Œì„ì¤‘ë‹¨
 		}
 		else {
-			while (getchar() != '\n'); //Å°º¸µå¹öÆÛ Á¤¸®
+			while (getchar() != '\n'); //í‚¤ë³´ë“œë²„í¼ ì •ë¦¬
 			do {
-				printf("\n\n°ÔÀÓÀ» °è¼ÓÇÏ°Ú½À´Ï±î? (y/n): ");
+				printf("\n\nê²Œì„ì„ ê³„ì†í•˜ê² ìŠµë‹ˆê¹Œ? (y/n): ");
 				
-				cont = getchar(); //Àá½Ãy,n ¹Ş´Â´Ù
+				cont = getchar(); //ì ì‹œy,n ë°›ëŠ”ë‹¤
 				if (cont == 'y' || cont == 'Y')
 					cont = 1;
 				else if (cont == 'n' || cont == 'N')
 					cont = 0;
 				else
 					cont = 2;
-			} while (cont == 2); //y,n¸¸ ¹Şµµ·Ï
+			} while (cont == 2); //y,në§Œ ë°›ë„ë¡
 		}
-	} while (cont == 1); //°ÔÀÓ ¹İº¹¿©ºÎ
+	} while (cont == 1); //ê²Œì„ ë°˜ë³µì—¬ë¶€
 
 	return;
 }
 
-int init_pai() { //È²Á¦³ë¿¹°áÁ¤
-	int a; //ÀÔ·Â°ªÀúÀå
-	printf("[Ä«µå ÆĞ ¼±ÅÃ]\n");
+int init_pai() { //í™©ì œë…¸ì˜ˆê²°ì •
+	int a; //ì…ë ¥ê°’ì €ì¥
+	printf("[ì¹´ë“œ íŒ¨ ì„ íƒ]\n");
 	print_star(30);
-	printf("\n\n 0. È²Á¦ÆĞ (È²Á¦ 1Àå, ½Ã¹Î 4Àå)\n\n 1. ³ë¿¹ÆĞ (³ë¿¹ 1Àå, ½Ã¹Î 4Àå)\n\n");
+	printf("\n\n 0. í™©ì œíŒ¨ (í™©ì œ 1ì¥, ì‹œë¯¼ 4ì¥)\n\n 1. ë…¸ì˜ˆíŒ¨ (ë…¸ì˜ˆ 1ì¥, ì‹œë¯¼ 4ì¥)\n\n");
 	print_star(30);
-	printf("\nÀÔ·Â: ");
+	printf("\nì…ë ¥: ");
 	scanf("%d", &a);
 	return a;
 }
 
-void show_table(int pai, int citi) { //ÆĞ Ãâ·Â
+void show_table(int pai, int citi) { //íŒ¨ ì¶œë ¥
 	switch (citi) {
 	case 4:
 		print_star(40);
 		printf("\n\n");
-		printf("  ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤\n");
-		printf("  ¦¢?¦¢ ¦¢?¦¢ ¦¢?¦¢ ¦¢?¦¢ ¦¢?¦¢\n");
-		printf("  ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦°\n\n");
+		printf("  â”â”â” â”â”â” â”â”â” â”â”â” â”â”â”\n");
+		printf("  â”‚?â”‚ â”‚?â”‚ â”‚?â”‚ â”‚?â”‚ â”‚?â”‚\n");
+		printf("  â””â”â”› â””â”â”› â””â”â”› â””â”â”› â””â”â”›\n\n");
 		if (pai == 0) {
-			printf("  ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤\n");
-			printf("  ¦¢E¦¢ ¦¢C¦¢ ¦¢C¦¢ ¦¢C¦¢ ¦¢C¦¢\n");
-			printf("  ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦°\n\n");
+			printf("  â”â”â” â”â”â” â”â”â” â”â”â” â”â”â”\n");
+			printf("  â”‚Eâ”‚ â”‚Câ”‚ â”‚Câ”‚ â”‚Câ”‚ â”‚Câ”‚\n");
+			printf("  â””â”â”› â””â”â”› â””â”â”› â””â”â”› â””â”â”›\n\n");
 		}
 		else {
-			printf("  ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤\n");
-			printf("  ¦¢S¦¢ ¦¢C¦¢ ¦¢C¦¢ ¦¢C¦¢ ¦¢C¦¢\n");
-			printf("  ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦°\n\n");
+			printf("  â”â”â” â”â”â” â”â”â” â”â”â” â”â”â”\n");
+			printf("  â”‚Sâ”‚ â”‚Câ”‚ â”‚Câ”‚ â”‚Câ”‚ â”‚Câ”‚\n");
+			printf("  â””â”â”› â””â”â”› â””â”â”› â””â”â”› â””â”â”›\n\n");
 		}
 		print_star(40);
 		break;
@@ -206,18 +206,18 @@ void show_table(int pai, int citi) { //ÆĞ Ãâ·Â
 	case 3:
 		print_star(40);
 		printf("\n\n");
-		printf("  ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤\n");
-		printf("  ¦¢?¦¢ ¦¢?¦¢ ¦¢?¦¢ ¦¢?¦¢\n");
-		printf("  ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦°\n\n");
+		printf("  â”â”â” â”â”â” â”â”â” â”â”â”\n");
+		printf("  â”‚?â”‚ â”‚?â”‚ â”‚?â”‚ â”‚?â”‚\n");
+		printf("  â””â”â”› â””â”â”› â””â”â”› â””â”â”›\n\n");
 		if (pai == 0) {
-			printf("  ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤\n");
-			printf("  ¦¢E¦¢ ¦¢C¦¢ ¦¢C¦¢ ¦¢C¦¢\n");
-			printf("  ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦°\n\n");
+			printf("  â”â”â” â”â”â” â”â”â” â”â”â”\n");
+			printf("  â”‚Eâ”‚ â”‚Câ”‚ â”‚Câ”‚ â”‚Câ”‚\n");
+			printf("  â””â”â”› â””â”â”› â””â”â”› â””â”â”›\n\n");
 		}
 		else {
-			printf("  ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤\n");
-			printf("  ¦¢S¦¢ ¦¢C¦¢ ¦¢C¦¢ ¦¢C¦¢\n");
-			printf("  ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦°\n\n");
+			printf("  â”â”â” â”â”â” â”â”â” â”â”â”\n");
+			printf("  â”‚Sâ”‚ â”‚Câ”‚ â”‚Câ”‚ â”‚Câ”‚\n");
+			printf("  â””â”â”› â””â”â”› â””â”â”› â””â”â”›\n\n");
 		}
 		print_star(40);
 		break;
@@ -225,18 +225,18 @@ void show_table(int pai, int citi) { //ÆĞ Ãâ·Â
 	case 2:
 		print_star(40);
 		printf("\n\n");
-		printf("  ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤\n");
-		printf("  ¦¢?¦¢ ¦¢?¦¢ ¦¢?¦¢\n");
-		printf("  ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦°\n\n");
+		printf("  â”â”â” â”â”â” â”â”â”\n");
+		printf("  â”‚?â”‚ â”‚?â”‚ â”‚?â”‚\n");
+		printf("  â””â”â”› â””â”â”› â””â”â”›\n\n");
 		if (pai == 0) {
-			printf("  ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤\n");
-			printf("  ¦¢E¦¢ ¦¢C¦¢ ¦¢C¦¢\n");
-			printf("  ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦°\n\n");
+			printf("  â”â”â” â”â”â” â”â”â”\n");
+			printf("  â”‚Eâ”‚ â”‚Câ”‚ â”‚Câ”‚\n");
+			printf("  â””â”â”› â””â”â”› â””â”â”›\n\n");
 		}
 		else {
-			printf("  ¦®¦¬¦¤ ¦®¦¬¦¤ ¦®¦¬¦¤\n");
-			printf("  ¦¢S¦¢ ¦¢C¦¢ ¦¢C¦¢\n");
-			printf("  ¦¦¦¬¦° ¦¦¦¬¦° ¦¦¦¬¦°\n\n");
+			printf("  â”â”â” â”â”â” â”â”â”\n");
+			printf("  â”‚Sâ”‚ â”‚Câ”‚ â”‚Câ”‚\n");
+			printf("  â””â”â”› â””â”â”› â””â”â”›\n\n");
 		}
 		print_star(40);
 		break;
@@ -244,18 +244,18 @@ void show_table(int pai, int citi) { //ÆĞ Ãâ·Â
 	case 1:
 		print_star(40);
 		printf("\n\n");
-		printf("  ¦®¦¬¦¤ ¦®¦¬¦¤\n");
-		printf("  ¦¢?¦¢ ¦¢?¦¢\n");
-		printf("  ¦¦¦¬¦° ¦¦¦¬¦°\n\n");
+		printf("  â”â”â” â”â”â”\n");
+		printf("  â”‚?â”‚ â”‚?â”‚\n");
+		printf("  â””â”â”› â””â”â”›\n\n");
 		if (pai == 0) {
-			printf("  ¦®¦¬¦¤ ¦®¦¬¦¤\n");
-			printf("  ¦¢E¦¢ ¦¢C¦¢\n");
-			printf("  ¦¦¦¬¦° ¦¦¦¬¦°\n\n");
+			printf("  â”â”â” â”â”â”\n");
+			printf("  â”‚Eâ”‚ â”‚Câ”‚\n");
+			printf("  â””â”â”› â””â”â”›\n\n");
 		}
 		else {
-			printf("  ¦®¦¬¦¤ ¦®¦¬¦¤\n");
-			printf("  ¦¢S¦¢ ¦¢C¦¢\n");
-			printf("  ¦¦¦¬¦° ¦¦¦¬¦°\n\n");
+			printf("  â”â”â” â”â”â”\n");
+			printf("  â”‚Sâ”‚ â”‚Câ”‚\n");
+			printf("  â””â”â”› â””â”â”›\n\n");
 		}
 		print_star(40);
 		break;
@@ -263,18 +263,18 @@ void show_table(int pai, int citi) { //ÆĞ Ãâ·Â
 	case 0:
 		print_star(40);
 		printf("\n\n");
-		printf("  ¦®¦¬¦¤\n");
-		printf("  ¦¢?¦¢\n");
-		printf("  ¦¦¦¬¦°\n\n");
+		printf("  â”â”â”\n");
+		printf("  â”‚?â”‚\n");
+		printf("  â””â”â”›\n\n");
 		if (pai == 0) {
-			printf("  ¦®¦¬¦¤\n");
-			printf("  ¦¢E¦¢\n");
-			printf("  ¦¦¦¬¦°\n\n");
+			printf("  â”â”â”\n");
+			printf("  â”‚Eâ”‚\n");
+			printf("  â””â”â”›\n\n");
 		}
 		else {
-			printf("  ¦®¦¬¦¤\n");
-			printf("  ¦¢S¦¢\n");
-			printf("  ¦¦¦¬¦°\n\n");
+			printf("  â”â”â”\n");
+			printf("  â”‚Sâ”‚\n");
+			printf("  â””â”â”›\n\n");
 		}
 		print_star(40);
 		break;
@@ -285,18 +285,18 @@ void show_table(int pai, int citi) { //ÆĞ Ãâ·Â
 	return;
 }
 
-int get_user_card(int pai, int citi, int es) { //ÆĞ ¼±ÅÃ¹Ş±â
-	int a; //ÀÔ·Â°ªÀúÀå
+int get_user_card(int pai, int citi, int es) { //íŒ¨ ì„ íƒë°›ê¸°
+	int a; //ì…ë ¥ê°’ì €ì¥
 	show_table(pai, citi);
-	printf("\n\n[Ä«µå ¼±ÅÃ]\n");
+	printf("\n\n[ì¹´ë“œ ì„ íƒ]\n");
 	print_star(17);
 	if (pai == 0)
-		printf("\n\n 0. È²Á¦ (%dÀå)", es);
+		printf("\n\n 0. í™©ì œ (%dì¥)", es);
 	else
-		printf("\n\n 0. ³ë¿¹ (%dÀå)", es);
-	printf("\n\n 1. ½Ã¹Î (%dÀå)\n\n", citi);
+		printf("\n\n 0. ë…¸ì˜ˆ (%dì¥)", es);
+	printf("\n\n 1. ì‹œë¯¼ (%dì¥)\n\n", citi);
 	print_star(17);
-	printf("\nÀÔ·Â: ");
+	printf("\nì…ë ¥: ");
 	scanf("%d", &a);
 	return a;
 }
@@ -304,100 +304,100 @@ int get_user_card(int pai, int citi, int es) { //ÆĞ ¼±ÅÃ¹Ş±â
 int get_computer_card(int a) {
 	srand(time(NULL));
 	if (a < 1)
-		return 0; //½Ã¹ÎÄ«µå1Àå¹Ì¸¸ ½Ã¹ÎÄ«µåºÒ°¡
+		return 0; //ì‹œë¯¼ì¹´ë“œ1ì¥ë¯¸ë§Œ ì‹œë¯¼ì¹´ë“œë¶ˆê°€
 	else
 		return rand() % 2;
 }
 
 int compare_card(int u, int c, int pai) { // 0:win 1:lose 2:draw
 
-	if (u == 1 && c == 1) //½Ã¹Î¹«½ÂºÎ
+	if (u == 1 && c == 1) //ì‹œë¯¼ë¬´ìŠ¹ë¶€
 		return 2;
 	if (u == 0 && c == 0)
-		return !pai; //ÀÌ ¶§´Â È²Á¦¸¦ °¡Áö¸é Áö¹Ç·Î ¹İ´ë·Î Ãâ·ÂÇØÁØ´Ù(È²Á¦´Âpai0ÀÌ±â¶§¹®)
+		return !pai; //ì´ ë•ŒëŠ” í™©ì œë¥¼ ê°€ì§€ë©´ ì§€ë¯€ë¡œ ë°˜ëŒ€ë¡œ ì¶œë ¥í•´ì¤€ë‹¤(í™©ì œëŠ”pai0ì´ê¸°ë•Œë¬¸)
 	else
-		return pai; //ÀÌ ¶§´Â Ã¶ÀúÇÑ ¼­¿­¿¡ÀÇÇØ È²Á¦¸¦ °¡Á®¾ß ½Â¸®ÇÑ´Ù.(»ó´ë¶Ç´Â³»°¡½Ã¹ÎÀÌ¶ó È²Á¦¿©¾ß ½Â¸®)
+		return pai; //ì´ ë•ŒëŠ” ì² ì €í•œ ì„œì—´ì—ì˜í•´ í™©ì œë¥¼ ê°€ì ¸ì•¼ ìŠ¹ë¦¬í•œë‹¤.(ìƒëŒ€ë˜ëŠ”ë‚´ê°€ì‹œë¯¼ì´ë¼ í™©ì œì—¬ì•¼ ìŠ¹ë¦¬)
 }
 
 void print_result(int pai, int uc, int cc, int shobu) {
 
-	printf("\n[¼±ÅÃ °á°ú]\n");
+	printf("\n[ì„ íƒ ê²°ê³¼]\n");
 	print_star(17);
 	if (uc == 0) {
 		if (pai == 0)
-			printf("\n\n * ³ªÀÇ Ä«µå	: È²Á¦");
+			printf("\n\n * ë‚˜ì˜ ì¹´ë“œ	: í™©ì œ");
 		if (pai == 1)
-			printf("\n\n * ³ªÀÇ Ä«µå	: ³ë¿¹");
+			printf("\n\n * ë‚˜ì˜ ì¹´ë“œ	: ë…¸ì˜ˆ");
 	}
 	if (uc == 1)
-		printf("\n\n * ³ªÀÇ Ä«µå	: ½Ã¹Î");
+		printf("\n\n * ë‚˜ì˜ ì¹´ë“œ	: ì‹œë¯¼");
 
 	if (cc == 0) {
 		if (pai == 1)
-			printf("\n\n * ÄÄÇ»ÅÍÀÇ Ä«µå: È²Á¦");
+			printf("\n\n * ì»´í“¨í„°ì˜ ì¹´ë“œ: í™©ì œ");
 		if (pai == 0)
-			printf("\n\n * ÄÄÇ»ÅÍÀÇ Ä«µå: ³ë¿¹");
+			printf("\n\n * ì»´í“¨í„°ì˜ ì¹´ë“œ: ë…¸ì˜ˆ");
 	}
 	if (cc == 1)
-		printf("\n\n * ÄÄÇ»ÅÍÀÇ Ä«µå: ½Ã¹Î");
+		printf("\n\n * ì»´í“¨í„°ì˜ ì¹´ë“œ: ì‹œë¯¼");
 
 	switch (shobu) {
 	case 0:
-		printf("\n\n * °á°ú	: ³ªÀÇ ½Â¸®\n\n");
+		printf("\n\n * ê²°ê³¼	: ë‚˜ì˜ ìŠ¹ë¦¬\n\n");
 		break;
 	case 1:
-		printf("\n\n * °á°ú	: ³ªÀÇ ÆĞ¹è\n\n");
+		printf("\n\n * ê²°ê³¼	: ë‚˜ì˜ íŒ¨ë°°\n\n");
 		break;
 	case 2:
-		printf("\n\n * °á°ú	: ¹«½ÂºÎ\n\n");
+		printf("\n\n * ê²°ê³¼	: ë¬´ìŠ¹ë¶€\n\n");
 		break;
 	}
 	print_star(17);
 }
 
-void calc_score(int pai, int shobu, int* u, int* c) { //Æ÷ÀÎÅÍ·Î Á¡¼ö¹İÈ¯ÇÑ´Ù
+void calc_score(int pai, int shobu, int* u, int* c) { //í¬ì¸í„°ë¡œ ì ìˆ˜ë°˜í™˜í•œë‹¤
 	if (pai == 0) {
-		if (shobu == 0) //È²Á¦·Î½Â¸®
+		if (shobu == 0) //í™©ì œë¡œìŠ¹ë¦¬
 			*u += 200, *c -= 300;
-		if (shobu == 1) //È²Á¦·ÎÆĞ¹è
+		if (shobu == 1) //í™©ì œë¡œíŒ¨ë°°
 			*u -= 500, *c += 700;
 	}
 	if (pai == 1) {
-		if (shobu == 0) //³ë¿¹·Î½Â¸®
+		if (shobu == 0) //ë…¸ì˜ˆë¡œìŠ¹ë¦¬
 			*u += 700, *c -= 500;
-		if (shobu == 1) //³ë¿¹·ÎÆĞ¹è
+		if (shobu == 1) //ë…¸ì˜ˆë¡œíŒ¨ë°°
 			*u -= 300, *c += 200;
 	}
 }
 
-int print_score(int usr, int com) { //Á¡¼öÃâ·Â¹×°á°ú¹İÈ¯
-	printf("\n\n[ÇöÀç Á¡¼ö]\n");
+int print_score(int usr, int com) { //ì ìˆ˜ì¶œë ¥ë°ê²°ê³¼ë°˜í™˜
+	printf("\n\n[í˜„ì¬ ì ìˆ˜]\n");
 	print_star(17);
-	printf("\n\n * ³ªÀÇ Á¡¼ö	: %d", usr);
-	printf("\n\n * ÄÄÇ»ÅÍÀÇ Á¡¼ö: %d\n\n", com);
+	printf("\n\n * ë‚˜ì˜ ì ìˆ˜	: %d", usr);
+	printf("\n\n * ì»´í“¨í„°ì˜ ì ìˆ˜: %d\n\n", com);
 	print_star(17);
 
-	if ((usr >= 2000) || (com >= 2000)) { //°ÔÀÓ³¡
+	if ((usr >= 2000) || (com >= 2000)) { //ê²Œì„ë
 		if (usr > com)
 			return 1;
 		if (usr < com)
 			return 2;
 		else
-			return 3; //Á¤¸»¹«½ÂºÎÀÏ°æ¿ì(±×·²ÀÏ¾øÀ¸³ª È®Àå¼º°í·Á)
+			return 3; //ì •ë§ë¬´ìŠ¹ë¶€ì¼ê²½ìš°(ê·¸ëŸ´ì¼ì—†ìœ¼ë‚˜ í™•ì¥ì„±ê³ ë ¤)
 	}
-	else //°ÔÀÓ°è¼Ó
+	else //ê²Œì„ê³„ì†
 		return 0;
 }
 
-void print_win(int win) { //ÃÖÁ¾°á°úÃâ·Â
-	printf("\n\n[ÃÖÁ¾ °á°ú]\n");
+void print_win(int win) { //ìµœì¢…ê²°ê³¼ì¶œë ¥
+	printf("\n\n[ìµœì¢… ê²°ê³¼]\n");
 	print_star(17);
 	if (win == 1)
-		printf("\n\n * ´ç½ÅÀÇ ½Â¸® !\n\n");
+		printf("\n\n * ë‹¹ì‹ ì˜ ìŠ¹ë¦¬ !\n\n");
 	if (win == 2)
-		printf("\n\n * ´ç½ÅÀÇ ÆĞ¹è !\n\n");
+		printf("\n\n * ë‹¹ì‹ ì˜ íŒ¨ë°° !\n\n");
 	print_star(17);
-	printf("\n\nEnterÅ°¸¦ ÀÔ·ÂÇÏ¼¼¿ä...");
-	while (getchar() != '\n'); //Å°º¸µå¹öÆÛ Á¤¸®
+	printf("\n\nEnterí‚¤ë¥¼ ì…ë ¥í•˜ì„¸ìš”...");
+	while (getchar() != '\n'); //í‚¤ë³´ë“œë²„í¼ ì •ë¦¬
 	getchar();
 }
