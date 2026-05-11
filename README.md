@@ -19,7 +19,8 @@
 
 - `Windows.h` 제거
 - `Sleep()` 대신 `wait_ms()`로 대체하여 크로스플랫폼 호환성 확보
-- `system("cls")` 대신 `clear_screen()` 함수를 사용하여 Windows와 Unix/macOS 모두에서 화면을 지우도록 처리
+- `system()` 호출 완전 제거
+- `clear_screen()`을 ANSI 이스케이프 시퀀스로 변경하여 터미널 기반 화면 지우기 구현
 - `main()`에서 한 번만 `srand(time(NULL))`을 호출하여 난수 시드를 초기화
 - `time` 변수명을 `round_no`로 변경하여 `time.h` 함수와의 이름 충돌 해결
 - `main(void)`와 명시적 함수 선언을 사용하여 코드 품질 향상

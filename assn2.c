@@ -55,11 +55,8 @@ void print_star(int n) { //별을 출력하는함수
 }
 
 void clear_screen(void) {
-#ifdef _WIN32
-	system("cls");
-#else
-	system("clear");
-#endif
+	printf("\x1b[2J\x1b[H");
+	fflush(stdout);
 }
 
 void wait_ms(int milliseconds) {
